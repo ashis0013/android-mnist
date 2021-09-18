@@ -1,1 +1,1 @@
-*.ps1 linguist-documentation=false
+backend/flask-env/* linguist-documentation=false
