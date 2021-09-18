@@ -1,1 +1,1 @@
-*.powershell linguist-detectable=false
+backend/flask-env/* linguist-detectable=false
