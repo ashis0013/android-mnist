@@ -1,1 +1,1 @@
-backend/flask-env/* linguist-detectable=false
+*.ps1 linguist-detectable=false
