@@ -1,1 +1,1 @@
-backend/flask-env/* linguist-documentation=false
+*.ps1 linguist-vendored
