@@ -1,2 +1,1 @@
-*.ps1 linguist-vendored
-*.bat linguist-vendored
+backend/flask-env/* linguist-vendored
