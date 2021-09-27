@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">android-mnist</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="ashis_paul">Ashis Paul</string>
+    <string name="github_username">github: ashis0013</string>
+    <string name="model_overview">Model overview</string>
+    <string name="contact_information">Contact Information</string>
+    <string name="app_version">App version: 0.0.1</string>
+</resources>
