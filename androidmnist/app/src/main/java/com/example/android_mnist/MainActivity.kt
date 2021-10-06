@@ -23,8 +23,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         navigateToMainFragment()
         setupBindings()
-        val x:Int? = null
-        val y = x!!
     }
 
     private fun setupBindings() {
