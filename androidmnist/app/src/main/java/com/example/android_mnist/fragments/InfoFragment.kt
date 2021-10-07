@@ -1,6 +1,7 @@
 package com.example.android_mnist.fragments
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
@@ -60,6 +61,7 @@ class InfoFragment : Fragment() {
     private fun initToolBar() {
         toolbar = binding.infoToolbar
         toolbar.title = "About the App"
+        toolbar.setTitleTextColor(Color.WHITE)
         (activity as AppCompatActivity?)?.apply {
             setSupportActionBar(toolbar)
             supportActionBar?.let {

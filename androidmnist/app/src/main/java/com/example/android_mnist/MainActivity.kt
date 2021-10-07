@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var infoFragment: InfoFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        changeStatusBarColor(false, R.color.white)
+        changeStatusBarColor(true, resources.getColor(R.color.background))
         super.onCreate(savedInstanceState)
         loadFragments()
         binding = ActivityMainBinding.inflate(layoutInflater)

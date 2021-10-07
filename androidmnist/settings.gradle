@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "android-mnist"
 include ':app'
+include ':canvas-view'

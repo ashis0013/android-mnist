@@ -1,12 +1,12 @@
-package com.example.android_mnist
+package com.example.canvas_view
 
-import android.widget.LinearLayout
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.util.Base64
 import android.view.MotionEvent
 import android.view.View
+import androidx.core.content.ContextCompat
 import java.io.ByteArrayOutputStream
 
 class CanvasView(context: Context, attrs: AttributeSet? = null): View(context, attrs) {
@@ -16,7 +16,7 @@ class CanvasView(context: Context, attrs: AttributeSet? = null): View(context, a
     private var pathList = mutableListOf<Path>()
 
     init {
-        setBackgroundColor(Color.BLACK)
+        setBackgroundColor(ContextCompat.getColor(context, R.color.background_canvas))
         mPaint = Paint().apply {
             isAntiAlias = true
             isDither = true
@@ -62,12 +62,10 @@ class CanvasView(context: Context, attrs: AttributeSet? = null): View(context, a
 
     fun getBitMap(): String {
         val bitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.RGB_565)
-        val view = this
         val canvas = Canvas(bitmap)
         draw(canvas)
         val stream = ByteArrayOutputStream()
         bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream)
-        val imgString = Base64.encodeToString(stream.toByteArray(), Base64.DEFAULT)
-        return imgString
+        return Base64.encodeToString(stream.toByteArray(), Base64.DEFAULT)
     }
 }
