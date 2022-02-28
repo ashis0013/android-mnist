@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from predictor import predictResult
+from app.predictor import predictResult
 app = Flask(__name__)
 
 @app.route('/', methods = ['GET'])

@@ -35,7 +35,7 @@ def transform_image(b64img):
 
 def predictResult(b64img):
     model = Net()
-    PATH = "../model.pth"
+    PATH = "app/model.pth"
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.load_state_dict(torch.load(PATH, map_location=device))
     model.eval()
