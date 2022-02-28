@@ -12,5 +12,3 @@ def predict():
         b64String = request.form['file']
         prediction = predictResult(b64String)
         return jsonify({'pred' : prediction.item()})
-
-app.run()

@@ -35,7 +35,7 @@ requests==2.26.0
 ruamel.yaml==0.17.17
 ruamel.yaml.clib==0.2.6
 six==1.16.0
-TBB==0.2
+TBB
 torch==1.10.2+cpu
 torchvision==0.11.3+cpu
 typing_extensions==4.1.1
