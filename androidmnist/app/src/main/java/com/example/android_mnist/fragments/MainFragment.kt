@@ -8,12 +8,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.get
 import com.example.android_mnist.databinding.FragmentMainBinding
+import com.example.android_mnist.viewmodels.MainViewModel
 import java.io.ByteArrayOutputStream
 
 class MainFragment: Fragment() {
 
     private lateinit var binding: FragmentMainBinding
+
+    private val viewModel by lazy {
+        ViewModelProvider(this)[MainViewModel::class.java]
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,14 +35,15 @@ class MainFragment: Fragment() {
         setupBindings()
     }
 
-    private fun setupBindings() {
-
-        binding.clearButton.setOnClickListener {
-            binding.canvasView.clear()
+    private fun setupBindings() = with(binding) {
+        vm = viewModel
+        lifecycleOwner = viewLifecycleOwner
+        clearButton.setOnClickListener {
+            canvasView.clear()
         }
 
-        binding.materialButton.setOnClickListener {
-            binding.canvasView.getBitMap()
+        materialButton.setOnClickListener {
+            viewModel.getPrediction(canvasView.getBase64())
         }
     }
 

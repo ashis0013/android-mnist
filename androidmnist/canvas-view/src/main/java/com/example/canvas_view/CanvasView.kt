@@ -60,7 +60,7 @@ class CanvasView(context: Context, attrs: AttributeSet? = null): View(context, a
         invalidate()
     }
 
-    fun getBitMap(): String {
+    fun getBase64(): String {
         val bitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.RGB_565)
         val canvas = Canvas(bitmap)
         draw(canvas)

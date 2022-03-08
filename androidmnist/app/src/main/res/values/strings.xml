@@ -6,4 +6,6 @@
     <string name="model_overview">Model overview</string>
     <string name="contact_information">Contact Information</string>
     <string name="app_version">App version: 0.0.1</string>
+    <string name="prediction">Prediction:</string>
+    <string name="predict">Predict</string>
 </resources>

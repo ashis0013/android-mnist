@@ -1,5 +1,6 @@
 import requests 
 import base64
+import curlify
 
 def toBase64(filename):
     encodedString = ''
@@ -8,4 +9,5 @@ def toBase64(filename):
     return encodedString
 
 res = requests.post('https://mnist-flask-pytorch-ashis.herokuapp.com/predict', data={'file': toBase64('seven.png')})
+print(curlify.to_curl(res.request))
 print(res.text)
