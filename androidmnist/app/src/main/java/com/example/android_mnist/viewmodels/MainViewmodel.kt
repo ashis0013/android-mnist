@@ -5,12 +5,10 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.android_mnist.domain.MnistRequest
 import com.example.android_mnist.domain.MnistServiceImpl
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.lang.Exception
-import kotlin.random.Random
 
 class MainViewModel(): ViewModel() {
 
@@ -32,12 +30,11 @@ class MainViewModel(): ViewModel() {
     }
 
     fun getPrediction(imageString: String) {
-        println(imageString.toString())
+        println(imageString)
         viewModelScope.launch {
             val response = try {
-                val bruh = MnistServiceImpl.apiService.getPrediction(MnistRequest(imageString))
-                println("ashis: ${bruh}")
-                0
+                val bruh = MnistServiceImpl.apiService.getPrediction(imageString)
+                bruh.body()?.pred?: 0
             } catch (e: Exception) {
                 Log.e(TAG, "getPrediction: Exception!!${e.message}")
                 -1
