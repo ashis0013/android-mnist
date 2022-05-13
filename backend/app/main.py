@@ -9,6 +9,6 @@ def home():
 @app.route('/predict', methods = ['POST'])
 def predict():
     if request.method == 'POST':
-        b64String = request.form['file']
+        b64String = request.form['image']
         prediction = predictResult(b64String)
         return jsonify({'pred' : prediction.item()})

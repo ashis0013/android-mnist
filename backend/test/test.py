@@ -1,6 +1,5 @@
 import requests 
 import base64
-import curlify
 
 def toBase64(filename):
     encodedString = ''
@@ -8,5 +7,5 @@ def toBase64(filename):
         encodedString = base64.b64encode(img.read())
     return encodedString
 
-res = requests.post('https://mnist-flask-pytorch-ashis.herokuapp.com/predict', data={'file': toBase64('seven.png')})
-print(toBase64('eight.png'))
+res = requests.post('http://mnist-flask-pytorch-ashis.herokuapp.com/predict', data={'image': toBase64('seven.png')})
+print(res.text)
