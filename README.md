@@ -6,7 +6,7 @@ The API endpoint is publically available at `https://mnist-flask-pytorch-ashis.h
 
 ## Todo
 - [ ] Add logo, splash and proper package name
-- [ ] Improve backend. Add proper error handling and response
+- [x] Improve backend. Add proper error handling and response
 - [ ] Move the UI to jetpack compose
 - [ ] Improve base64 conversion to deal with smaller drawings
 - [ ] Add logging and devtooling (Flipper?)
